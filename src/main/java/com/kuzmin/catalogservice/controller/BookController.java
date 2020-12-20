@@ -1,5 +1,6 @@
 package com.kuzmin.catalogservice.controller;
 
+import com.kuzmin.catalogservice.exception.BookNotFoundException;
 import com.kuzmin.catalogservice.model.Book;
 import com.kuzmin.catalogservice.service.BookService;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +24,8 @@ public class BookController {
 
     @GetMapping("{isbn}")
     public Book getByIsbn(@PathVariable String isbn) {
-        return bookService.viewBookDetails(isbn).orElse(null);
+        return bookService.viewBookDetails(isbn)
+                .orElseThrow(() -> new BookNotFoundException(isbn));
     }
 
     @PostMapping
