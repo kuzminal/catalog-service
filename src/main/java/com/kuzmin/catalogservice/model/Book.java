@@ -16,7 +16,7 @@ import java.time.Year;
 public class Book {
     @NotBlank(message = "The book ISBN must be defined.")
     @Pattern(regexp = "^(97([89]))?\\d{9}(\\d|X)$",
-            message = "The ISBN format must follow the standards ISBN-10or ISBN-13.")
+            message = "The ISBN format must follow the standards ISBN-10 or ISBN-13.")
     private String isbn;
     @NotBlank(message = "The book title must be defined.")
     private String title;
