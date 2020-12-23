@@ -13,7 +13,8 @@ import javax.persistence.*;
 @EntityListeners(AuditingEntityListener.class)
 public class BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence_generator")
+    @SequenceGenerator(name = "sequence_generator", sequenceName = "entity_sequence")
     private Long id;
     @CreatedDate
     private Long createdDate;

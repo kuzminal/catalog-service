@@ -18,4 +18,4 @@ spring:
       pool-name: bookshopdb-pool
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: validate
