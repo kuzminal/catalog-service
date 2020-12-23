@@ -22,13 +22,13 @@ public class BookValidationTests {
     }
     @Test
     void whenAllFieldsCorrectThenValidationSucceeds() {
-        Book book = new Book("1234567890", "Title", "Author", Year.of(2000));
+        Book book = new Book("1234567890", "Title", "Author", Year.of(2000), 1.5);
         Set<ConstraintViolation<Book>> violations = validator.validate(book);
         assertThat(violations).isEmpty();
     }
     @Test
     void whenIsbnDefinedButIncorrectThenValidationFails() {
-        Book book = new Book("a234567890", "Title", "Author", Year.of(2000));
+        Book book = new Book("a234567890", "Title", "Author", Year.of(2000), 1.5);
         Set<ConstraintViolation<Book>> violations = validator.validate(book);
         assertThat(violations).hasSize(1);
         assertThat(violations.iterator().next().getMessage())
