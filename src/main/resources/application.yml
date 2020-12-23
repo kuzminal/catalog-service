@@ -15,7 +15,7 @@ spring:
     hikari:
       connection-timeout: 20000
       maximum-pool-size: 20
-      pool-name: polardb-pool
+      pool-name: bookshopdb-pool
   jpa:
     hibernate:
-    ddl-auto: create-drop
+      ddl-auto: create-drop
