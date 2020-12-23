@@ -7,3 +7,15 @@ server:
     threads:
       max: 200
       min-spare: 10
+spring:
+  datasource:
+    username: admin
+    password: admin
+    url: jdbc:postgresql://localhost:5432/bookshop_catalogdb
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 20
+      pool-name: polardb-pool
+  jpa:
+    hibernate:
+    ddl-auto: create-drop
