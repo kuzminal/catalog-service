@@ -1,19 +1,18 @@
 package com.kuzmin.catalogservice.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 import java.time.Year;
 
+@Data
+@NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-public class Book {
+@Entity
+public class Book extends BaseEntity{
     @NotBlank(message = "The book ISBN must be defined.")
     @Pattern(regexp = "^(97([89]))?\\d{9}(\\d|X)$",
             message = "The ISBN format must follow the standards ISBN-10 or ISBN-13.")
@@ -24,4 +23,5 @@ public class Book {
     private String author;
     @PastOrPresent(message = "The book cannot have been published in the future.")
     private Year publishingYear;
+    private Double price;
 }
