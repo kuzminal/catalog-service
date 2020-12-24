@@ -20,10 +20,8 @@ public class BaseEntity {
     @SequenceGenerator(name = "sequence_generator", sequenceName = "entity_sequence")
     private Long id;
     @CreatedDate
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date createdDate;
     @LastModifiedDate
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date lastModifiedDate;
     @Version
     private int version;

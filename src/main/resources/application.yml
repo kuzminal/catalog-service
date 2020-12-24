@@ -19,3 +19,5 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
