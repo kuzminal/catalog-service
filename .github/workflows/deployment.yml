@@ -14,7 +14,7 @@ jobs:
         with:
           java-version: 11
       - name: Build and test application
-        run: mvn build
+        run: mvn package
   package:
     name: Build and Push Docker Image
     needs: [build]
